@@ -41,6 +41,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const generatedEmail = completion.choices[0].message.content || '';
 
+    // Save generated email
+await prisma.email.create({
+  data: {
+    userId: user.id,
+    content: generatedEmail,
+  },
+});
+
+
     // Deduct 1 credit
     await prisma.user.update({
       where: { email: session.user.email },
