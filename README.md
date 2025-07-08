@@ -20,3 +20,8 @@ npm run dev
 
 - Run: `npx prisma migrate dev --name add-credits` to update your database.
 - Ensure your database URL in `.env` is set.
+
+## Email History
+
+- Run: `npx prisma migrate dev --name add-email-history`
+- Visit `/email-history` to see your saved emails.
