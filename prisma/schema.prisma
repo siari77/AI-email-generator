@@ -13,3 +13,12 @@ model User {
   name          String?
   credits       Int     @default(10)
 }
+
+model Email {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  content   String
+  createdAt DateTime @default(now())
+}
+
