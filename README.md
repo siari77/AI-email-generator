@@ -14,3 +14,9 @@ npm install
 npx prisma generate
 npx prisma migrate dev --name init
 npm run dev
+
+
+## Additional Setup
+
+- Run: `npx prisma migrate dev --name add-credits` to update your database.
+- Ensure your database URL in `.env` is set.
