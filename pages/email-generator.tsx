@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSession, signIn } from "next-auth/react";
 import axios from "axios";
+import Link from 'next/link';
 
 export default function EmailGenerator() {
   const { data: session } = useSession();
@@ -31,6 +32,9 @@ export default function EmailGenerator() {
     <div style={{ maxWidth: 600, margin: "0 auto", padding: "2rem" }}>
       <h1>Email Generator</h1>
       <p>Credits remaining: {session.user.credits}</p>
+      <p>
+       <Link href="/email-history">View my email history</Link>
+      </p>
       <textarea
         placeholder="Describe your email..."
         value={description}
